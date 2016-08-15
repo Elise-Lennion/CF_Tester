@@ -12,3 +12,5 @@ Currently TLE verdict isn't supported.
 To work properly it requires that folders named 'input' and 'output' exist in the same folder of the tester.
 
 Probably not bug-free, will be fixing bugs as soon as I find them.
+
+Basic usage: python test_codeforces.py --help
