@@ -13,4 +13,6 @@ To work properly it requires that folders named 'input' and 'output' exist in th
 
 Probably not bug-free, will be fixing bugs as soon as I find them.
 
-Basic usage: python test_codeforces.py --help
+Basic usage:
+  
+  python test_codeforces.py --help
