@@ -69,22 +69,31 @@ class CodeTester:
         soup = BeautifulSoup(data, 'lxml')
 
         for input in soup.find_all('div', {'class': 'problem-statement'}):
+
             for node in input.findAll('p'):
+
                 statement = statement + \
                     ' '.join(node.findAll(text=True)).encode('utf-8')
 
         statement += '\nInput\n'
         for input in soup.find_all('div', {'class': 'input'}):
+
             for node in input.find_all('pre'):
+
                 statement = statement + \
                     '\n'.join(node.findAll(text=True)).encode('utf-8')
                 file = open(self._FOLDER_INPUT + 'in'
                             + str(len(os.listdir(self._FOLDER_INPUT))), 'w')
                 file.write('\n'.join(node.findAll(text=True)))
 
+                # Additional line break for testcases with strings
+                file.write('\n')
+
         statement += '\nOutput\n'
         for output in soup.find_all('div', {'class': 'output'}):
+
             for node in output.find_all('pre'):
+
                 statement = statement + \
                     '\n'.join(node.findAll(text=True)).encode('utf-8')
                 file = open(self._FOLDER_OUTPUT + 'out'
